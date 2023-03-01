@@ -1,0 +1,5 @@
+/* Menu and logo bar */
+.row {
+  width: 100%;
+  display: flex;
+}
