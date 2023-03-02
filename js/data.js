@@ -1,5 +1,16 @@
 /* exported data */
-/* var productArray = [{
+
+/* function getProductData() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://fakestoreapi.com/products');
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+    var productArray = xhr.response
+  });
+  console.log(productArray);
+  xhr.send();
+
+ var productArray = [{
   id: 1,
   title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
   price: 109.95,

@@ -5,25 +5,86 @@ body {
 /* Top Bar - 1 */
 .top-message {
   text-align: center;
+  font-family: Merriweather, serif;
+  font-size: 10px;
+  background: #222831;
+}
+
+.top-message > p {
+  margin: 0;
+  padding: 7px 0 5px;
+  color: white;
 }
 
 /* Bar with menu and log */
+.menu-logo-bar {
+  padding: 5px 20px;
+  color: #222831;
+  background-color: #e1afad;
+}
+
+.welcome-text > h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 40px;
+  width: 75%;
+}
+
 #right-bar > h1 {
   margin: 0;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 30px;
 }
 
 #middle-bar {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-family: Merriweather, serif;
+}
+
+#middle-bar > a: {
+  padding: 0 10px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #222831;
+}
+
+#middle-bar > a:link {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #222831;
+}
+
+#middle-bar > a:visited {
+  text-decoration: none;
+  color: #222831;
+  transform: scale(1);
+}
+
+#middle-bar > a:hover {
+  color: white;
+}
+
+#middle-bar > a:active {
+  transform: scale(0.9);
 }
 
 #left-bar {
   display: flex;
+  align-self: flex-end;
+  height: 18px;
+}
+
+#left-bar > i {
+  padding: 0 0 0 15px;
 }
 
 /* Background Homepage Tile */
-.homepage {
+.welcome {
   position: relative;
+  height: 700px;
 }
 
 #homepage-background-img {
@@ -34,17 +95,56 @@ body {
 
 .welcome-text {
   position: absolute;
-  top: 50%;
-  right: 10%;
+  font-family: Merriweather, sans-serif;
+  top: 35%;
+  right: 8%;
+}
+
+.welcome-text > h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  width: 75%;
+}
+
+.now-button {
+  border-radius: 20px;
+  border-style: none;
+  font-size: 17px;
+  padding: 10px 20px;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.now-button:link {
+  color: #222831;
+  background-color: white;
+}
+
+.now-button:visited {
+  color: #222831;
+  background-color: white;
+  transform: scale(1);
+}
+
+.now-button:hover {
+  color: white;
+  background-color: #222831;
+}
+
+.now-button:active {
+  transform: scale(0.97);
 }
 
 /* Carousel */
+.carousel-section {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
 .carousel-row {
   position: relative;
-  background-color: bisque;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  background-color: white;
 }
 
 .carousel-group {
@@ -69,10 +169,67 @@ body {
   width: 65%;
 }
 
-.carousel-cover {
-  position: absolute;
-  background: bisque;
-  width: 50px;
-  height: 332px;
-  right: 0;
+@media (max-width: 570px) {
+  #middle-bar {
+    display: none;
+  }
+
+  .row {
+    justify-content: space-between;
+  }
+
+  .box {
+    background-color: red;
+  }
+
+  .welcome {
+    position: relative;
+    height: 600px;
+  }
+
+  #homepage-background-img {
+    height: 100%;
+  }
+
+  .welcome-text {
+    position: absolute;
+    font-family: Merriweather, sans-serif;
+    top: 30%;
+    left: 37%;
+    width: 60%;
+  }
+
+  .welcome-text > h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .welcome-text > h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .now-button {
+    border-radius: 20px;
+    border-style: none;
+    font-size: 0.7rem;
+    padding: 7px 15px;
+    font-family: "Merriweather Sans", sans-serif;
+  }
+
+  .carousel-group {
+    overflow: hidden;
+  }
+
+  .carousel-tile {
+    width: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: white;
+    flex-shrink: 0;
+  }
 }

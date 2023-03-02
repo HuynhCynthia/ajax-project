@@ -44,6 +44,7 @@ function backgroundText(array) {
 function createShopNowButton(array) {
   var $button = document.createElement('button');
   $button.textContent = array[1];
+  $button.className = 'now-button';
   array[0].appendChild($button);
 }
 
@@ -98,9 +99,9 @@ function carousel(productIdArray, interval) {
       }
     }
 
-    var $span = document.querySelectorAll('span');
-    $span.forEach(function (individualSpan) {
-      individualSpan.addEventListener('click', clickDirection);
+    var $arrows = document.querySelectorAll('.fa-sharp');
+    $arrows.forEach(function (individualArrow) {
+      individualArrow.addEventListener('click', clickDirection);
     });
   }
   productArray.send();
@@ -109,22 +110,13 @@ function carousel(productIdArray, interval) {
 //  Change Carousel View by clicking first or last image
 function clickDirection(e) {
   var $ulNodeList = document.querySelectorAll('ul');
+  var $hidden = document.querySelector('.hidden');
+  var groupId = parseInt($hidden.getAttribute('data-groupid'));
+  $hidden.classList.remove('hidden');
 
-  if (e.target.tagName !== 'IMG') {
-    var spanId = parseInt(e.target.getAttribute('data-spanid'));
-  } else if (e.target.tagName !== 'SPAN') {
-    var imgId = parseInt(e.target.getAttribute('data-imageid'));
-  }
-
-  if (imgId % 4 === 0 || spanId % 4 === 0 || (imgId + 1) % 4 === 0 || (spanId + 1) % 4 === 0) {
-    var $hidden = document.querySelector('.hidden');
-    var groupId = parseInt($hidden.getAttribute('data-groupid'));
-    $hidden.classList.remove('hidden');
-
-    for (let i = 0; i < $ulNodeList.length; i++) {
-      if (groupId !== i) {
-        $ulNodeList[i].classList.add('hidden');
-      }
+  for (let i = 0; i < $ulNodeList.length; i++) {
+    if (groupId !== i) {
+      $ulNodeList[i].classList.add('hidden');
     }
   }
   clearInterval(nIntervId);
@@ -147,8 +139,8 @@ function cycle() {
 
 var $welcomeTile = document.querySelector('.welcome');
 generateTopBarCategories(['Men', 'Women', 'Jewelry']);
-backgroundHomeImg('/images/woman-orange-edited.png');
-var populatedWelcomeDiv = backgroundText(['The Collection is Here', 'From dresses, shirts and jewerly']);
+backgroundHomeImg('/images/man-blue-edited.png');
+var populatedWelcomeDiv = backgroundText(['The Collection is Here.', 'The latest styles.']);
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
 carousel([1, 2, 3, 4, 10, 11, 12, 13], 4);
-var nIntervId = setInterval(cycle, 2000);
+var nIntervId = setInterval(cycle, 3000);
