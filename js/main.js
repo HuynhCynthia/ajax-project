@@ -128,6 +128,7 @@ function clickDirection(e) {
     }
   }
   clearInterval(nIntervId);
+  nIntervId = setInterval(cycle, 2000);
 }
 
 // Automatic view change in carousel
@@ -150,4 +151,4 @@ backgroundHomeImg('/images/woman-orange-edited.png');
 var populatedWelcomeDiv = backgroundText(['The Collection is Here', 'From dresses, shirts and jewerly']);
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
 carousel([1, 2, 3, 4, 10, 11, 12, 13], 4);
-var nIntervId = setInterval(cycle, 3000);
+var nIntervId = setInterval(cycle, 2000);
