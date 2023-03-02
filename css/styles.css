@@ -17,6 +17,10 @@ body {
 }
 
 /* Bar with menu and log */
+.fa-bars {
+  display: none;
+}
+
 .menu-logo-bar {
   padding: 5px 20px;
   color: #222831;
@@ -55,6 +59,8 @@ body {
   text-decoration: none;
   padding: 0 10px;
   color: #222831;
+  transition: color 4s;
+  transition: transform 0.3s;
 }
 
 #middle-bar > a:visited {
@@ -113,6 +119,8 @@ body {
   font-size: 17px;
   padding: 10px 20px;
   font-family: "Merriweather Sans", sans-serif;
+  transition: background-color 0.3s;
+  transition: transform 0.3s;
 }
 
 .now-button:link {

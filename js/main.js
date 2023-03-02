@@ -14,6 +14,7 @@ function generateTopBarCategories(array) {
 // Generating Welcome Tile Content
 function backgroundHomeImg(string) {
   var $backgroundImg = document.querySelector('#homepage-background-img');
+  $backgroundImg.alt = 'picture of model';
   $backgroundImg.src = string;
 }
 
@@ -84,6 +85,7 @@ function carousel(productIdArray, interval) {
         $spanImg.setAttribute('data-spanId', i);
         $imgProduct.setAttribute('data-imageid', i);
         $imgProduct.src = productArray.response[productIdArray[i] - 1].image;
+        $imgProduct.alt = productArray.response[productIdArray[i] - 1].title;
         $imgProduct.className = 'carousel-image';
         $spanImg.appendChild($imgProduct);
         $carouselGroup.appendChild($spanImg);
@@ -93,6 +95,7 @@ function carousel(productIdArray, interval) {
         $spanImg.setAttribute('data-spanId', i);
         $imgProduct.setAttribute('data-imageid', i);
         $imgProduct.src = productArray.response[productIdArray[i] - 1].image;
+        $imgProduct.alt = productArray.response[productIdArray[i] - 1].title;
         $imgProduct.className = 'carousel-image';
         $spanImg.appendChild($imgProduct);
         $carouselNodeList[section - 1].appendChild($spanImg);
