@@ -92,7 +92,6 @@ function carousel(productIdArray, interval) {
         $spanImg.setAttribute('data-spanId', i);
         $imgProduct.setAttribute('data-imageid', i);
         $imgProduct.src = productArray.response[productIdArray[i] - 1].image;
-        // $imgProduct.src = productArray[productIdArray[i] - 1].image;
         $imgProduct.className = 'carousel-image';
         $spanImg.appendChild($imgProduct);
         $carouselNodeList[section - 1].appendChild($spanImg);
