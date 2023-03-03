@@ -59,8 +59,8 @@ body {
   text-decoration: none;
   padding: 0 10px;
   color: #222831;
-  transition: color 4s;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
+  transition: color 0.3s;
 }
 
 #middle-bar > a:visited {
@@ -74,16 +74,15 @@ body {
 }
 
 #middle-bar > a:active {
-  transform: scale(0.9);
+  transform: scale(0.96);
 }
 
 #left-bar {
   display: flex;
-  align-self: flex-end;
-  height: 18px;
+  align-items: center;
 }
 
-#left-bar > i {
+.left-icons {
   padding: 0 0 0 15px;
 }
 
@@ -119,8 +118,8 @@ body {
   font-size: 17px;
   padding: 10px 20px;
   font-family: "Merriweather Sans", sans-serif;
-  transition: background-color 0.3s;
   transition: transform 0.3s;
+  transition: background-color 0.4s;
 }
 
 .now-button:link {
@@ -178,6 +177,14 @@ body {
 }
 
 @media (max-width: 570px) {
+  .menu-icon {
+    padding-top: 1rem;
+  }
+
+  .fa-bars {
+    display: contents;
+  }
+
   #middle-bar {
     display: none;
   }
