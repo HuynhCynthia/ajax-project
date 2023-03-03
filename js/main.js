@@ -1,12 +1,12 @@
-
 // Generating categories listed at the top bar
-function generateTopBarCategories(array) {
+function generateTopBarCategories(categoryMenuNames, categoriesApiNames) {
   var $middleBar = document.querySelector('#middle-bar');
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < categoryMenuNames.length; i++) {
     var $newAnchor = document.createElement('a');
     $newAnchor.className = 'categories-top-bar';
     $newAnchor.href = '';
-    $newAnchor.textContent = array[i];
+    $newAnchor.id = categoriesApiNames[i];
+    $newAnchor.textContent = categoryMenuNames[i];
     $middleBar.appendChild($newAnchor);
   }
 }
@@ -18,6 +18,7 @@ function backgroundHomeImg(string) {
   $backgroundImg.src = string;
 }
 
+// Generate DOM tree of homepage welcome text
 function backgroundText(array) {
   var $newWelcomeDiv = document.createElement('div');
 
@@ -42,6 +43,7 @@ function backgroundText(array) {
   return $newWelcomeDiv;
 }
 
+// Generate DOM tree of shop now button on homepage
 function createShopNowButton(array) {
   var $button = document.createElement('button');
   $button.textContent = array[1];
@@ -140,8 +142,24 @@ function cycle() {
   }
 }
 
+/* Category Product Page */
+// API request for product images and generate category array list
+/* function identifyCategory(e) {
+
+}
+
+function categoryProductArray(category) {
+  var productArray = new XMLHttpRequest();
+  productArray.open('GET', 'https://fakestoreapi.com/products/category/' + category);
+  productArray.responseType = 'json';
+  productArray.addEventListener('load', function () {
+    console.log(productArray.response);
+  });
+  productArray.send();
+} */
+
 var $welcomeTile = document.querySelector('.welcome');
-generateTopBarCategories(['Men', 'Women', 'Jewelry']);
+generateTopBarCategories(['Men', 'Women', 'Jewelry'], ['men\'s clothing', 'women\'s clothing', 'jewelery']);
 backgroundHomeImg('/images/man-blue-edited.png');
 var populatedWelcomeDiv = backgroundText(['The Collection is Here.', 'The latest styles.']);
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
