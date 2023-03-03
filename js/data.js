@@ -1,6 +1,7 @@
 /* exported data */
 
-/* function getProductData() {
+/*
+function getProductData() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://fakestoreapi.com/products');
   xhr.responseType = 'json';

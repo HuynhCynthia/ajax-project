@@ -48,19 +48,18 @@ body {
   font-family: Merriweather, serif;
 }
 
-#middle-bar > a: {
+#middle-bar > a {
   padding: 0 10px;
   font-size: 15px;
   text-decoration: none;
   color: #222831;
+  transition: 0.3s;
 }
 
 #middle-bar > a:link {
   text-decoration: none;
   padding: 0 10px;
   color: #222831;
-  transition: transform 0.2s;
-  transition: color 0.3s;
 }
 
 #middle-bar > a:visited {
