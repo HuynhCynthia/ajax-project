@@ -179,6 +179,7 @@ body {
 @media (max-width: 570px) {
   .menu-icon {
     padding-top: 1rem;
+    width: 63.5px;
   }
 
   .fa-bars {
