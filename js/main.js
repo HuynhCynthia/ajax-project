@@ -4,7 +4,7 @@ function generateTopBarCategories(categoryMenuNames, categoriesApiNames) {
   for (let i = 0; i < categoryMenuNames.length; i++) {
     var $newAnchor = document.createElement('a');
     $newAnchor.className = 'categories-top-bar';
-    $newAnchor.href = '';
+    $newAnchor.href = '/html/category.html';
     $newAnchor.id = categoriesApiNames[i];
     $newAnchor.textContent = categoryMenuNames[i];
     $middleBar.appendChild($newAnchor);
@@ -143,20 +143,19 @@ function cycle() {
 }
 
 /* Category Product Page */
-// API request for product images and generate category array list
-/* function identifyCategory(e) {
+// API request for product in specific category
+function categoryView(e) {
+  var category = e.target.getElementById();
+  return category;
 
-}
-
-function categoryProductArray(category) {
-  var productArray = new XMLHttpRequest();
+  /* var productArray = new XMLHttpRequest();
   productArray.open('GET', 'https://fakestoreapi.com/products/category/' + category);
   productArray.responseType = 'json';
   productArray.addEventListener('load', function () {
     console.log(productArray.response);
   });
-  productArray.send();
-} */
+  productArray.send(); */
+}
 
 var $welcomeTile = document.querySelector('.welcome');
 generateTopBarCategories(['Men', 'Women', 'Jewelry'], ['men\'s clothing', 'women\'s clothing', 'jewelery']);
@@ -165,3 +164,7 @@ var populatedWelcomeDiv = backgroundText(['The Collection is Here.', 'The latest
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
 carousel([1, 2, 3, 4, 10, 11, 12, 13], 4);
 var nIntervId = setInterval(cycle, 3000);
+var $categoryOptions = document.querySelectorAll('.categories-top-bar');
+$categoryOptions.forEach(function (individual) {
+  individual.addEventListener('click', categoryView);
+});
