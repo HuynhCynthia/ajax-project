@@ -301,4 +301,9 @@ body {
     background: white;
     flex-shrink: 0;
   }
+
+  .category-list-item {
+    width: 49.5%;
+    justify-content: space-evenly;
+  }
 }
