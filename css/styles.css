@@ -16,6 +16,31 @@ body {
   color: white;
 }
 
+.logo-link {
+  color: #222831;
+  text-decoration: none;
+}
+
+.logo-link > a:link {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #222831;
+}
+
+.logo-link > a:visited {
+  text-decoration: none;
+  color: #222831;
+  transform: scale(1);
+}
+
+.logo-link > a:hover {
+  color: white;
+}
+
+.logo-link > a:active {
+  transform: scale(0.96);
+}
+
 /* Bar with menu and log */
 .fa-bars {
   display: none;
@@ -173,6 +198,35 @@ body {
 
 .carousel-image {
   width: 65%;
+}
+
+/* Category Page */
+.category-title-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.product-tiles-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 1%;
+}
+
+.category-list-item {
+  width: 32%;
+  aspect-ratio: 1/1;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.category-tile-image {
+  width: 100%;
+  object-fit: contain;
+  filter: brightness(90%);
 }
 
 @media (max-width: 570px) {

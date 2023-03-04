@@ -1,3 +1,10 @@
+// Generating Welcome Tile Content
+function backgroundHomeImg(string) {
+  var $backgroundImg = document.querySelector('#homepage-background-img');
+  $backgroundImg.alt = 'picture of model';
+  $backgroundImg.src = string;
+}
+
 // Generate DOM tree of homepage welcome text
 function backgroundText(array) {
   var $newWelcomeDiv = document.createElement('div');
@@ -122,8 +129,10 @@ function cycle() {
   }
 }
 
+// Homepage
 var $welcomeTile = document.querySelector('.welcome');
 var populatedWelcomeDiv = backgroundText(['The Collection is Here.', 'The latest styles.']);
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
 carousel([1, 2, 3, 4, 10, 11, 12, 13], 4);
 var nIntervId = setInterval(cycle, 3000);
+backgroundHomeImg('/images/man-blue-edited.png');

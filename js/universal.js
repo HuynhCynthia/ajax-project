@@ -11,12 +11,15 @@ function generateTopBarCategories(categoryMenuNames, categoriesApiNames) {
   }
 }
 
-// Generating Welcome Tile Content
-function backgroundHomeImg(string) {
-  var $backgroundImg = document.querySelector('#homepage-background-img');
-  $backgroundImg.alt = 'picture of model';
-  $backgroundImg.src = string;
+function populateStorage(e) {
+  localStorage.setItem('categoryId', e.target.id);
 }
 
+// Generating categories listed at the top bar
 generateTopBarCategories(['Men', 'Women', 'Jewelry'], ['men\'s clothing', 'women\'s clothing', 'jewelery']);
-backgroundHomeImg('/images/man-blue-edited.png');
+
+// Category Page
+var $categoryOptions = document.querySelectorAll('.categories-top-bar');
+$categoryOptions.forEach(function (individualCategoryLink) {
+  individualCategoryLink.addEventListener('click', populateStorage);
+});
