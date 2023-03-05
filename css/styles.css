@@ -216,7 +216,6 @@ body {
 
 .category-list-item {
   width: 32%;
-  aspect-ratio: 1/1;
   display: flex;
   margin-bottom: 1%;
   flex-wrap: wrap;
@@ -224,7 +223,6 @@ body {
 
 .image-product-category-div {
   background: #e5e5e5;
-  width: 100%;
 }
 
 .product-title-category {
@@ -233,6 +231,7 @@ body {
 
 .category-tile-image {
   width: 100%;
+  aspect-ratio: 1/1;
   object-fit: contain;
   filter: brightness(90%);
 }
