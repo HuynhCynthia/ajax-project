@@ -217,10 +217,18 @@ body {
 .category-list-item {
   width: 32%;
   aspect-ratio: 1/1;
-  background: #e5e5e5;
   display: flex;
-  justify-content: center;
   margin-bottom: 1%;
+  flex-wrap: wrap;
+}
+
+.image-product-category-div {
+  background: #e5e5e5;
+  width: 100%;
+}
+
+.product-title-category {
+  font-size: 0.9rem;
 }
 
 .category-tile-image {

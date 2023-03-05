@@ -16,27 +16,45 @@ function listCategoryProducts(categoryId) {
   categoryArray.responseType = 'json';
   categoryArray.addEventListener('load', function () {
     var $categoryTile = document.querySelector('.category-tile');
-    var $divCategory = document.createElement('div');
-    $divCategory.className = 'product-tiles-category';
+    var $divCategory = document.querySelector('.product-tiles-category');
     $categoryTile.appendChild($divCategory);
     for (let i = 0; i < categoryArray.response.length; i++) {
       var imageUrl = categoryArray.response[i].image;
       var $span = document.createElement('span');
-      $span.className = 'category-list-item';
+      var $imgDiv = document.createElement('div');
       var $img = document.createElement('img');
+      var $productTitle = document.createElement('h1');
+      var $price = document.createElement('p');
+      var $titlePrice = document.createElement('div');
+      $imgDiv.className = 'image-product-category-div';
+      $titlePrice.className = 'title-price-category';
+      $productTitle.className = 'product-title-category';
+      $productTitle.textContent = categoryArray.response[i].title;
+      $price.className = 'price-category';
+      $price.textContent = '$' + categoryArray.response[i].price;
+      $span.className = 'category-list-item';
       $img.setAttribute('data-imageid', categoryArray.response[i].id);
       $img.className = 'category-tile-image';
       $img.src = imageUrl;
-      $span.appendChild($img);
+      $imgDiv.appendChild($img);
+      $span.appendChild($imgDiv);
+      $titlePrice.appendChild($productTitle);
+      $titlePrice.appendChild($price);
+      $span.appendChild($titlePrice);
       $divCategory.appendChild($span);
     }
-    // Add event listener to each product span
-    var $productTiles = document.querySelectorAll('.category-list-item');
-    $productTiles.forEach(function (individualproduct) {
-      individualproduct.addEventListener('click', productStorage);
-    });
+    clickProduct();
+
   });
   categoryArray.send();
+}
+
+// Add event listener to each product span
+function clickProduct() {
+  var $productTiles = document.querySelectorAll('.category-list-item');
+  $productTiles.forEach(function (individualproduct) {
+    individualproduct.addEventListener('click', productStorage);
+  });
 }
 
 function productStorage(e) {
