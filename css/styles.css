@@ -300,6 +300,10 @@ body {
     overflow: hidden;
   }
 
+  .product-tiles-category {
+    margin-top: 0.2rem;
+  }
+
   .carousel-tile {
     width: 50%;
     aspect-ratio: 1/1;
@@ -313,5 +317,13 @@ body {
   .category-list-item {
     width: 49.5%;
     justify-content: space-evenly;
+  }
+
+  .title-price-category {
+    width: 95%;
+  }
+
+  .category-background-image {
+    display: none;
   }
 }
