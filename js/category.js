@@ -36,6 +36,7 @@ function listCategoryProducts(categoryId) {
       $img.setAttribute('data-imageid', categoryArray.response[i].id);
       $img.className = 'category-tile-image';
       $img.src = imageUrl;
+      $img.alt = categoryArray.response[i].title;
       $imgDiv.appendChild($img);
       $span.appendChild($imgDiv);
       $titlePrice.appendChild($productTitle);
