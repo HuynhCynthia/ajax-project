@@ -240,6 +240,10 @@ body {
   filter: brightness(90%);
 }
 
+.hidden-carousel {
+  display: none;
+}
+
 @media (max-width: 570px) {
   .menu-icon {
     padding-top: 1rem;
@@ -384,11 +388,11 @@ body {
     transform: scale(0.96);
   }
 
-  .hidden {
-    display: none;
-  }
-
   .right-icon {
     cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
   }
 }

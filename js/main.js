@@ -61,7 +61,7 @@ function carousel(productIdArray, interval) {
       } else if (i % interval === 0 && i > 0) {
         $ul = document.createElement('ul');
         $ul.setAttribute('data-groupid', section);
-        $ul.className = 'carousel-group hidden';
+        $ul.className = 'carousel-group hidden-carousel';
         $carousel.appendChild($ul);
         section++;
       }
@@ -102,13 +102,13 @@ function carousel(productIdArray, interval) {
 //  Change Carousel View by clicking first or last image
 function clickDirection(e) {
   var $ulNodeList = document.querySelectorAll('ul');
-  var $hidden = document.querySelector('.hidden');
+  var $hidden = document.querySelector('.hidden-carousel');
   var groupId = parseInt($hidden.getAttribute('data-groupid'));
-  $hidden.classList.remove('hidden');
+  $hidden.classList.remove('hidden-carousel');
 
   for (let i = 0; i < $ulNodeList.length; i++) {
     if (groupId !== i) {
-      $ulNodeList[i].classList.add('hidden');
+      $ulNodeList[i].classList.add('hidden-carousel');
     }
   }
   clearInterval(nIntervId);
@@ -118,13 +118,13 @@ function clickDirection(e) {
 // Automatic view change in carousel
 function cycle() {
   var $ulNodeList = document.querySelectorAll('ul');
-  var $hidden = document.querySelector('.hidden');
+  var $hidden = document.querySelector('.hidden-carousel');
   var groupId = parseInt($hidden.getAttribute('data-groupid'));
-  $hidden.classList.remove('hidden');
+  $hidden.classList.remove('hidden-carousel');
 
   for (let i = 0; i < $ulNodeList.length; i++) {
     if (groupId !== i) {
-      $ulNodeList[i].classList.add('hidden');
+      $ulNodeList[i].classList.add('hidden-carousel');
     }
   }
 }
