@@ -1,16 +1,3 @@
-
-// Generating categories listed at the top bar
-function generateTopBarCategories(array) {
-  var $middleBar = document.querySelector('#middle-bar');
-  for (let i = 0; i < array.length; i++) {
-    var $newAnchor = document.createElement('a');
-    $newAnchor.className = 'categories-top-bar';
-    $newAnchor.href = '';
-    $newAnchor.textContent = array[i];
-    $middleBar.appendChild($newAnchor);
-  }
-}
-
 // Generating Welcome Tile Content
 function backgroundHomeImg(string) {
   var $backgroundImg = document.querySelector('#homepage-background-img');
@@ -18,6 +5,7 @@ function backgroundHomeImg(string) {
   $backgroundImg.src = string;
 }
 
+// Generate DOM tree of homepage welcome text
 function backgroundText(array) {
   var $newWelcomeDiv = document.createElement('div');
 
@@ -42,6 +30,7 @@ function backgroundText(array) {
   return $newWelcomeDiv;
 }
 
+// Generate DOM tree of shop now button on homepage
 function createShopNowButton(array) {
   var $button = document.createElement('button');
   $button.textContent = array[1];
@@ -140,10 +129,10 @@ function cycle() {
   }
 }
 
+// Homepage
 var $welcomeTile = document.querySelector('.welcome');
-generateTopBarCategories(['Men', 'Women', 'Jewelry']);
-backgroundHomeImg('/images/man-blue-edited.png');
 var populatedWelcomeDiv = backgroundText(['The Collection is Here.', 'The latest styles.']);
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
 carousel([1, 2, 3, 4, 10, 11, 12, 13], 4);
 var nIntervId = setInterval(cycle, 3000);
+backgroundHomeImg('/images/man-blue-edited.png');
