@@ -135,4 +135,4 @@ var populatedWelcomeDiv = backgroundText(['The Collection is Here.', 'The latest
 createShopNowButton([populatedWelcomeDiv, 'SHOP NOW']);
 carousel([1, 2, 3, 4, 10, 11, 12, 13], 4);
 var nIntervId = setInterval(cycle, 3000);
-backgroundHomeImg('/images/man-blue-edited.png');
+backgroundHomeImg('images/man-blue-edited.png');
